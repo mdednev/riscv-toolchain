@@ -1,0 +1,30 @@
+diff -urN a/gdb-10.1/sim/riscv/sim-main.c b/gdb-10.1/sim/riscv/sim-main.c
+--- a/gdb-10.1/sim/riscv/sim-main.c	2021-03-24 20:23:10.000000000 +0300
++++ b/gdb-10.1/sim/riscv/sim-main.c	2021-12-17 14:29:50.192767026 +0300
+@@ -1055,7 +1055,7 @@
+ 		      crs1s_name, EXTRACT_RVC_IMM (iw));
+ 	  if (RISCV_XLEN (cpu) == 32 && EXTRACT_RVC_IMM (iw) > 0x1f)
+ 	    sim_engine_halt (sd, cpu, NULL, cpu->pc, sim_signalled, SIM_SIGILL);
+-	  store_rd (cpu, crs1s, cpu->regs[crs1s] >> EXTRACT_RVC_IMM (iw));
++	  store_rd (cpu, crs1s, LSMASKED(cpu->regs[crs1s], RISCV_XLEN (cpu) - 1, 0) >> EXTRACT_RVC_IMM (iw));
+ 	  return pc;
+ 	case MATCH_C_SRAI:
+ 	  /* rv32: c.srli, rv128: c.srli64.  */
+@@ -1394,7 +1394,7 @@
+       TRACE_INSN (cpu, "srl %s, %s, %s;  // %s = %s >> %s",
+ 		  rd_name, rs1_name, rs2_name, rd_name, rs1_name, rs2_name);
+       u_imm = RISCV_XLEN (cpu) == 32 ? 0x1f : 0x3f;
+-      store_rd (cpu, rd, cpu->regs[rs1] >> (cpu->regs[rs2] & u_imm));
++      store_rd (cpu, rd, LSMASKED(cpu->regs[rs1], RISCV_XLEN (cpu) - 1, 0) >> (cpu->regs[rs2] & u_imm));
+       break;
+     case MATCH_SRLW:
+       TRACE_INSN (cpu, "srlw %s, %s, %s;  // %s = %s >> %s",
+@@ -1407,7 +1407,7 @@
+ 		  rd_name, rs1_name, shamt_imm, rd_name, rs1_name, shamt_imm);
+       if (RISCV_XLEN (cpu) == 32 && shamt_imm > 0x1f)
+ 	sim_engine_halt (sd, cpu, NULL, cpu->pc, sim_signalled, SIM_SIGILL);
+-      store_rd (cpu, rd, cpu->regs[rs1] >> shamt_imm);
++      store_rd (cpu, rd, LSMASKED(cpu->regs[rs1], RISCV_XLEN (cpu) - 1, 0) >> shamt_imm);
+       break;
+     case MATCH_SRLIW:
+       TRACE_INSN (cpu, "srliw %s, %s, %" PRIiTW ";  // %s = %s >> %#" PRIxTW,

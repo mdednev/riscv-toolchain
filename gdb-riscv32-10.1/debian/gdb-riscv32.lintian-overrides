@@ -1,0 +1,1 @@
+gdb-riscv32: binary-without-manpage usr/bin/riscv32-unknown-elf-run

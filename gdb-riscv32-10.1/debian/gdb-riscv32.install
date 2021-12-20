@@ -1,0 +1,4 @@
+usr/share/man/man1
+usr/share/doc/gdb-riscv
+usr/bin
+usr/lib/riscv32-unknown-elf

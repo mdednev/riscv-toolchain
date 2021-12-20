@@ -1,0 +1,19 @@
+gdb-riscv (10.1-20211217) stable; urgency=medium
+
+  * Fixed 32-bit simulation support for 64-bit builds.
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Fri, 17 Dec 2021 14:38:52 +0300
+
+gdb-riscv (10.1-20211214) stable; urgency=medium
+
+  * Added 64-bit support and switched target name to riscv64-unknown-elf
+  * Fixed build rules for proper upstream archive version processing
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Wed, 14 Dec 2021 11:56:30 +0300
+
+gdb-riscv (10.1-20211207) stable; urgency=medium
+
+  * Build based on https://github.com/riscv-collab/riscv-binutils-gdb 
+    commit 5da071ef0965b8054310d8dde9975037b0467311
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Tue, 7 Dec 2021 15:12:55 +0300

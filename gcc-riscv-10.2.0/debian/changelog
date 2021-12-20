@@ -1,0 +1,12 @@
+gcc-riscv (10.2.0-20211214) stable; urgency=medium
+
+  * Added 64-bit support and switched target name to riscv64-unknown-elf
+  * Fixed build rules for proper upstream archive version processing
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Wed, 14 Dec 2021 11:29:30 +0300
+
+gcc-riscv (10.2.0-20211207) stable; urgency=medium
+
+  * New release, based on git upstream version.
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Tue, 08 Dec 2021 12:34:05 +0300

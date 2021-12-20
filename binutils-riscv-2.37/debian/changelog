@@ -1,0 +1,18 @@
+binutils-riscv (2.37-20211214) stable; urgency=medium
+
+  * New upstream release, based on binutils-2.37 git
+    116a737f438d03a1bd6aa706b6ea0b4022f3b7e2 commit (tag riscv-binutils-2.37).
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Tue, 14 Dec 2021 11:00:19 +0300
+
+binutils-riscv (2.36.1-20211208+1) stable; urgency=medium
+
+  * Added 64-bit support MCU and switched target name to riscv64-unknown-elf
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Wed, 08 Dec 2021 11:08:53 +0300
+
+binutils-riscv (2.36.1-20211207) stable; urgency=medium
+
+  * New version based on binutils-2.36.1 git upstream commit
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Tue, 07 Dec 2021 11:05:13 +0300

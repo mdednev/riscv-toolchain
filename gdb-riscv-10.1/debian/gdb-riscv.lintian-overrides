@@ -1,0 +1,1 @@
+gdb-riscv: binary-without-manpage usr/bin/riscv64-unknown-elf-run

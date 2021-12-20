@@ -1,0 +1,12 @@
+newlib-riscv (4.1.0-20211214) stable; urgency=medium
+
+  * Added 64-bit support and switched target name to riscv64-unknown-elf
+  * Fixed build rules for proper upstream archive version processing
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Wed, 14 Dec 2021 12:08:30 +0300
+
+newlib-riscv (4.1.0-20211207) stable; urgency=medium
+
+  * Update, based on upstream git sources.
+
+ -- Max A. Dednev <m.dednev@securitycode.ru>  Tue, 07 Dec 2021 15:01:59 +0300
